@@ -177,13 +177,14 @@ VALUES
 ('Inka Kola 500ml', 'Bebida gaseosa Inka Kola', 5.00, 300, 'Bebida'),
 ('Chicha Morada 1L', 'Bebida tradicional de maíz morado', 10.00, 250, 'Bebida');
 
-INSERT INTO Producto (nompro, despro, prepro, stock, catepro)
-VALUES
-('Pollo a la Brasa Entero', 'Pollo marinado cocinado a las brasas', 50.00, 100, 'Comida'),
-('Cuarto de Pollo', 'Cuarto de pollo a la brasa con papas', 15.00, 200, 'Comida'),
-('Pollo con Ensalada', 'Medio pollo a la brasa con ensalada', 30.00, 150, 'Comida'),
-('Inka Kola 500ml', 'Bebida gaseosa Inka Kola', 5.00, 300, 'Bebida'),
-('Chicha Morada 1L', 'Bebida tradicional de maíz morado', 10.00, 250, 'Bebida');
+-- Insertando 5 registros de ejemplo
+INSERT INTO Proveedor (nomprovee, apeprovee, rucprovee, dirprovee, corprovee, telprovee, estprovee)
+VALUES 
+('Juan', 'Perez', '1234567890', 'Av. Los Robles 123', 'juan.perez@email.com', '987654321', 1),
+('Maria', 'Lopez', '0987654321', 'Calle Las Flores 456', 'maria.lopez@email.com', '912345678', 1),
+('Carlos', 'Gomez', '1122334455', 'Jr. San Martin 789', 'carlos.gomez@email.com', '923456789', 1),
+('Luisa', 'Ramirez', '2233445566', 'Av. Los Olivos 321', 'luisa.ramirez@email.com', '934567890', 1),
+('Ana', 'Diaz', '3344556677', 'Calle Las Amapolas 654', 'ana.diaz@email.com', '945678901', 0);
 
 INSERT INTO Empleado (nomemple, apeemple, dniemple, codcargo, feccontrato, telefono, direccion, estemple)
 VALUES
@@ -209,6 +210,15 @@ VALUES
 (4, 4, 1, '2024-10-12', 'entregado', 75.00, 4.00, 13.50, 8.00, 92.50, 'Delivery', 'Efectivo', 'Online'),
 (5, 5, 3, '2024-10-15', 'pendiente', 200.00, 15.00, 36.00, 12.00, 233.00, 'Recoger en tienda', 'Tarjeta', 'Presencial');
 
+-- Insertando 5 registros en la tabla Insumo
+INSERT INTO Insumo (codprovee, nominsu, caninsu, udinsu, preuninsu, fecompra, fecvenci)
+VALUES
+(1, 'Harina de Trigo', 100.00, 'kg', 3.50, '2024-10-01', '2025-10-01'),
+(2, 'Azúcar', 50.00, 'kg', 2.80, '2024-09-15', '2025-09-15'),
+(3, 'Aceite de Girasol', 200.00, 'litros', 5.00, '2024-10-05', '2025-04-05'),
+(4, 'Pollo Entero', 75.00, 'unidades', 12.00, '2024-10-10', '2024-10-20'),
+(5, 'Leche Evaporada', 120.00, 'latas', 1.50, '2024-10-01', '2025-02-01');
+
 INSERT INTO DetalleVenta (codpro, codven, desdetven, cantdetven, preunidetven, subtotaldetven)
 VALUES
 (1, 1, 'Pollo a la Brasa Entero', 2, 50.00, 100.00),
@@ -222,6 +232,15 @@ VALUES
 ('Chaclacayo', 'Av. Los Sauces 150', '09:00:00'),
 ('Santa Clara', 'Av. Las Flores 200', '10:00:00'),
 ('San Isidro', 'Av. Javier Prado 2500', '08:00:00');
+-- Insertando 5 registros en la tabla DetalleInsumo
+INSERT INTO DetalleInsumo (codinsu, codpro, cantinsu)
+VALUES
+(1, 1, 20.00), -- Harina de Trigo para Pan de Molde
+(2, 2, 10.00), -- Azúcar para Galletas
+(3, 3, 15.00), -- Aceite de Girasol para Torta de Chocolate
+(4, 4, 5.00),  -- Pollo Entero para Pollo a la Brasa
+(5, 5, 10.00); -- Leche Evaporada para Leche con Café
+
 
 SELECT * FROM Sede;
 SELECT * FROM Producto;
